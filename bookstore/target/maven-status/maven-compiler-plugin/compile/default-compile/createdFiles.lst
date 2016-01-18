@@ -1,0 +1,3 @@
+org\glassfish\jersey\examples\bookmark\entity\UserEntity.class
+org\glassfish\jersey\examples\bookmark\entity\BookmarkEntity.class
+org\glassfish\jersey\examples\bookmark\entity\BookmarkEntityPK.class
