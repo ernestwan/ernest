@@ -1,0 +1,12 @@
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" version="2.0">
+   <persistence-unit-metadata>
+       <persistence-unit-defaults>
+           <entity-listeners>
+               <entity-listener class="cn.openjpa.demos.jpa.domain.TimestampEntityListener">
+                   <pre-persist method-name="onCreate"></pre-persist>
+                   <pre-update method-name="onPersist"></pre-update>
+               </entity-listener>
+           </entity-listeners>
+       </persistence-unit-defaults>
+   </persistence-unit-metadata>
+</entity-mappings>
