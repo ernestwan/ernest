@@ -9,53 +9,47 @@ import javax.persistence.Id;
 import javax.persistence.Version;
 
 @Entity
-public class User implements EntityWithColumns{
-
-	public User(String name) {
-		this.username = name;
-	}
+public class Message implements EntityWithColumns {
 	
 	@Embedded
-	private ExtraColumns technicalColumns;
+	private ExtraColumns extraColumns;
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	
-	@Column
-	private String username;
+	@Column(name="message")
+	private String info;
 	
 	@Version
 	private int version;
 	
+	public String getInfo() {
+		return info;
+	}
+
+	public void setInfo(String info) {
+		this.info = info;
+	}
+
 	public int getId() {
 		return id;
 	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	
-	public String getUsername() {
-		return username;
-	}
-	public void setUsername(String username) {
-		this.username = username;
-	}
-	
+
 	public int getVersion() {
 		return version;
 	}
-	
-	
+
 	@Override
 	public ExtraColumns getExtraColumns() {
 		// TODO Auto-generated method stub
-		return technicalColumns;
+		return extraColumns;
 	}
+
 	@Override
-	public void setExtraColumns(ExtraColumns technicalColumns) {
+	public void setExtraColumns(ExtraColumns extraColumns) {
 		// TODO Auto-generated method stub
-		this.technicalColumns = technicalColumns;
+		this.extraColumns = extraColumns;
 	}
-	
+
 }

@@ -12,17 +12,17 @@ public class TimestampEntityListener {
 	
 	    void onCreate(Object entity) {
 	
-	        if(entity instanceof EntityWithTechnicalColumns) {
+	        if(entity instanceof EntityWithColumns) {
 	
-	            EntityWithTechnicalColumns eact = (EntityWithTechnicalColumns)entity;
+	            EntityWithColumns eact = (EntityWithColumns)entity;
 	
-	            if(eact.getTechnicalColumns() == null) {
+	            if(eact.getExtraColumns() == null) {
 	
-	                eact.setTechnicalColumns(new TechnicalColumns());
+	                eact.setExtraColumns(new ExtraColumns());
 	
 	            }
 	
-	            eact.getTechnicalColumns().setCreateTime((new Timestamp((new Date()).getTime())));
+	            eact.getExtraColumns().setCreateTime((new Timestamp((new Date()).getTime())));
 	
 	        }
 	
@@ -34,17 +34,17 @@ public class TimestampEntityListener {
 	
 	    void onPersist(Object entity) {
 	
-	        if(entity instanceof EntityWithTechnicalColumns) {
+	        if(entity instanceof EntityWithColumns) {
 	
-	            EntityWithTechnicalColumns eact = (EntityWithTechnicalColumns)entity;
+	            EntityWithColumns eact = (EntityWithColumns)entity;
 	
-	            if(eact.getTechnicalColumns() == null) {
+	            if(eact.getExtraColumns() == null) {
 	
-	                eact.setTechnicalColumns(new TechnicalColumns());
+	                eact.setExtraColumns(new ExtraColumns());
 	
 	            }
 	
-	            eact.getTechnicalColumns().setUpdateTime(new Timestamp((new Date()).getTime()));
+	            eact.getExtraColumns().setUpdateTime(new Timestamp((new Date()).getTime()));
 	
 	        }
 	

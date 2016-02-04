@@ -5,7 +5,9 @@
     <persistence-unit name="openjpa" transaction-type="RESOURCE_LOCAL">
           <provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>
           <class>cn.openjpa.demos.jpa.domain.User</class>
-          <class>cn.openjpa.demos.jpa.domain.TimestampEntityListener</class>
+          <class>cn.openjpa.demos.jpa.domain.Message</class>
+          <class>cn.openjpa.demos.jpa.domain.ExtraColumns</class>
+          
           <properties>
          	  <property name="openjpa.ConnectionURL" value="jdbc:mysql://localhost:3306/test_jersey"/>
               <property name="openjpa.ConnectionDriverName" value="com.mysql.jdbc.Driver"/>
@@ -13,7 +15,5 @@
               <property name="openjpa.ConnectionPassword" value="19900529"/>
               <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(ForeignKeys=true)"/>
           </properties>
-          
      </persistence-unit>
-     
 </persistence>
